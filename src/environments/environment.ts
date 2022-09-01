@@ -3,8 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://rickandmortyapi.com/api/character'
 };
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyB4-k_qqyqiJcvpkfzRlPqDnj28FsSNveA",
+  authDomain: "apprenta-88d98.firebaseapp.com",
+  projectId: "apprenta-88d98",
+  storageBucket: "apprenta-88d98.appspot.com",
+  messagingSenderId: "942116895722",
+  appId: "1:942116895722:web:8ebead5cabf4b32e399093"
+};
+
 
 /*
  * For easier debugging in development mode, you can import the following file
