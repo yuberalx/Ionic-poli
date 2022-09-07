@@ -8,8 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'registros',
     pathMatch: 'full'
+  },
+  {
+    path: 'registros',
+    loadChildren: () => import('./paginas/registros/registros.module').then( m => m.RegistrosPageModule)
   },
 ];
 
