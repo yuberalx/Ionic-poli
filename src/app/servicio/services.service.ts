@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
+import { GoogleAuthProvider } from "firebase/auth";
 
 @Injectable({
   providedIn: 'root',
@@ -56,4 +57,13 @@ export class ServicesService {
         });
     });
   }
+loginGoogle(){
+
+  return this.AngFire.signInWithPopup(new GoogleAuthProvider())
+
+
+}
+
+
+
 }

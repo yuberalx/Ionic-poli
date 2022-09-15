@@ -34,4 +34,12 @@ export class HomePage implements OnInit {
     alert("error de datos" + error)
    })
   }
+  loginGoogle(){
+    this.servicio.loginGoogle().then((respuesta) =>{
+      console.log(respuesta)
+    },error=>{console.log(error)})
+
+  }
+
+
 }
