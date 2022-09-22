@@ -7,6 +7,21 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
 import { GoogleAuthProvider } from "firebase/auth";
 
+import { getAuth, signInWithPopup, OAuthProvider,signInWithRedirect, getRedirectResult } from "firebase/auth";
+
+
+const provider = new OAuthProvider('microsoft.com');
+
+  provider.setCustomParameters({
+    // Optional "tenant" parameter in case you are using an Azure AD tenant.
+    // eg. '8eaef023-2b34-4da1-9baa-8bc8c9d6a490' or 'contoso.onmicrosoft.com'
+    // or "common" for tenant-independent tokens.
+    // The default value is "common".
+    prompt: 'consent',
+    // redirect_uri: 'http://localhost:4200/home',
+    tenant: 'b7a14df2-6d9e-4da3-91eb-c8c9c5b5129c'
+  });
+
 @Injectable({
   providedIn: 'root',
 })
@@ -64,6 +79,50 @@ loginGoogle(){
 
 }
 
+//yuber.pulecio@pi.edu.co
+loginMicrosoft(){ 
 
+const auth = getAuth();
+signInWithRedirect(auth, provider);
+
+
+
+
+getRedirectResult(auth)
+ .then((result) => {
+   // User is signed in.
+   // IdP data available in result.additionalUserInfo.profile.
+
+   // Get the OAuth access token and ID Token
+   const credential = OAuthProvider.credentialFromResult(result);
+   const accessToken = credential.accessToken;
+   const idToken = credential.idToken;
+   alert(result)
+ })
+ .catch((error) => {
+   // Handle error
+
+ });
+
+//  return signInWithPopup(auth, provider)
+//   .then((result) => {
+//     // User is signed in.
+//     // IdP data available in result.additionalUserInfo.profile.
+
+//     // Get the OAuth access token and ID Token
+//     const credential = OAuthProvider.credentialFromResult(result);
+//     const accessToken = credential.accessToken;
+//     const idToken = credential.idToken;
+//     // alert(credential);
+//   })
+//   .catch((error) => {
+//     // Handle error.
+// console.log(error)
+//   });
+
+
+
+
+}
 
 }

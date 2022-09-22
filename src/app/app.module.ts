@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { firebaseConfig } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
+import { MsalModule } from '@azure/msal-angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MsalModule
       ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

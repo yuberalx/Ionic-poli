@@ -35,6 +35,7 @@
       <ion-label position="floating">Usuario</ion-label>
       <ion-input [(ngModel)]="email"></ion-input>
     </ion-item>
+    
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input [(ngModel)]="pass"></ion-input>
@@ -44,6 +45,7 @@
     <ion-button (click)="loguearse()" color="success">Success</ion-button>
 
     <ion-button (click)="loginGoogle()" color="success">login google</ion-button>
+    <ion-button (click)="loginMicrosoft()" color="success">login Microsoft</ion-button>
 
     <a [routerLink]="['/registros']" color="success">Registrarse</a>
   </div>
